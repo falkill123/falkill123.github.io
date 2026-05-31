@@ -42,19 +42,13 @@ h1{
     opacity:0.9;
 }
 
-.bottom-middle{
-    bottom:5%;
-    left:50%;
-}
-
 </style>
 </head>
 
 <body>
 
-<img src="flower1.gif" class="flower bottom-middle">
-
 <div class="container">
+    <img src="flower1.gif" class="flower bottom-middle">
     <h1>Bonne fête Maman</h1>
     <div class="signature">
         De la part de ton fils adoré ❤️
