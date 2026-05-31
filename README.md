@@ -2,109 +2,84 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bonne fête Maman ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     margin:0;
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    font-family:Arial,sans-serif;
+    background:#F9DDE2;
     overflow:hidden;
+    font-family:'Poppins', sans-serif;
 }
 
 .container{
     text-align:center;
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    position:relative;
+    z-index:2;
 }
 
 h1{
-    color:#e63946;
+    font-family:'Great Vibes', cursive;
+    font-size:6rem;
+    color:#C86B85;
+    margin-bottom:10px;
+    font-weight:normal;
 }
 
-button{
-    padding:12px 24px;
-    border:none;
-    border-radius:10px;
-    background:#e63946;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
+.signature{
+    font-size:1.2rem;
+    color:#8A6A74;
+    letter-spacing:1px;
 }
 
-#message{
-    margin-top:20px;
-    font-size:20px;
-    display:none;
-}
-
-.heart{
+.flower{
     position:absolute;
-    font-size:25px;
-    animation:float 4s linear forwards;
+    width:150px;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(0);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-600px);
-        opacity:0;
-    }
+.top-left{
+    top:5%;
+    left:5%;
 }
+
+.top-right{
+    top:5%;
+    right:5%;
+}
+
+.bottom-left{
+    bottom:5%;
+    left:5%;
+}
+
+.bottom-right{
+    bottom:5%;
+    right:5%;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- Remplace les src par tes gifs -->
+<img src="fleur1.gif" class="flower top-left">
+<img src="fleur2.gif" class="flower top-right">
+<img src="fleur3.gif" class="flower bottom-left">
+<img src="fleur4.gif" class="flower bottom-right">
+
 <div class="container">
-    <h1>Bonne fête Maman ❤️</h1>
-
-    <p>
-        Merci pour tout ce que tu fais pour moi chaque jour.
-    </p>
-
-    <button onclick="surprise()">
-        Ouvrir le message secret
-    </button>
-
-    <div id="message">
-        Je t'aime très fort ❤️<br>
-        Merci pour ton soutien, ta patience et ton amour.
+    <h1>Bonne fête Maman</h1>
+    <div class="signature">
+        De la part de tous tes adorés ❤️
     </div>
 </div>
-
-<script>
-function surprise(){
-
-    document.getElementById("message").style.display="block";
-
-    for(let i=0;i<40;i++){
-
-        let heart=document.createElement("div");
-        heart.innerHTML="❤️";
-        heart.className="heart";
-
-        heart.style.left=Math.random()*window.innerWidth+"px";
-        heart.style.top=(window.innerHeight-50)+"px";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.remove();
-        },4000);
-    }
-}
-</script>
 
 </body>
 </html>
