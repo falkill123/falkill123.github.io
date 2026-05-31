@@ -42,24 +42,9 @@ h1{
     width:150px;
 }
 
-.top-left{
-    top:5%;
-    left:5%;
-}
-
-.top-right{
-    top:5%;
-    right:5%;
-}
-
-.bottom-left{
+.bottom-middle{
     bottom:5%;
-    left:5%;
-}
-
-.bottom-right{
-    bottom:5%;
-    right:5%;
+    left:50%;
 }
 
 </style>
@@ -67,16 +52,12 @@ h1{
 
 <body>
 
-<!-- Remplace les src par tes gifs -->
-<img src="fleur1.gif" class="flower top-left">
-<img src="fleur2.gif" class="flower top-right">
-<img src="fleur3.gif" class="flower bottom-left">
-<img src="fleur4.gif" class="flower bottom-right">
+<img src="fleur1.gif" class="flower bottom-middle">
 
 <div class="container">
     <h1>Bonne fête Maman</h1>
     <div class="signature">
-        De la part de on fils adoré ❤️
+        De la part de ton fils adoré ❤️
     </div>
 </div>
 
