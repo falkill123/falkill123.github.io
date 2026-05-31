@@ -52,7 +52,7 @@ h1{
 
 <body>
 
-<img src="fleur1.gif" class="flower bottom-middle">
+<img src="flower1.gif" class="flower bottom-middle">
 
 <div class="container">
     <h1>Bonne fête Maman</h1>
