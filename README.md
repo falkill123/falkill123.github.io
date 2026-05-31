@@ -38,7 +38,7 @@ h1{
 }
 
 .flower{
-    width:120px;
+    width:240px;
     opacity:0.9;
 }
 
@@ -48,7 +48,7 @@ h1{
 <body>
 
 <div class="container">
-    <img src="flower1.gif" class="flower bottom-middle">
+    <img src="flower1.gif" class="flower">
     <h1>Bonne fête Maman</h1>
     <div class="signature">
         De la part de ton fils adoré ❤️
