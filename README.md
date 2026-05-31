@@ -38,8 +38,8 @@ h1{
 }
 
 .flower{
-    position:absolute;
-    width:150px;
+    width:120px;
+    opacity:0.9;
 }
 
 .bottom-middle{
