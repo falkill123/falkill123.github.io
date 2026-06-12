@@ -1,5 +1,3 @@
-
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +8,7 @@
 body{
     font-family:Arial,sans-serif;
     text-align:center;
-    background:#f0f2f5;
+    background:#f4f4f4;
 }
 
 h1{
@@ -20,20 +18,12 @@ h1{
 .wheel-container{
     position:relative;
     width:500px;
-    height:500px;
-    margin:30px auto;
-}
-
-#wheel{
-    border:5px solid #333;
-    border-radius:50%;
-    background:white;
-    transition:transform 5s ease-out;
+    margin:20px auto;
 }
 
 .arrow{
     position:absolute;
-    top:-20px;
+    top:-15px;
     left:50%;
     transform:translateX(-50%);
     width:0;
@@ -45,10 +35,16 @@ h1{
     border-top:40px solid red;
 }
 
+canvas{
+    border-radius:50%;
+    border:5px solid #333;
+}
+
 button{
     padding:12px 25px;
     font-size:18px;
     cursor:pointer;
+    margin-top:20px;
 }
 
 #result{
@@ -68,7 +64,7 @@ button{
     <canvas id="wheel" width="500" height="500"></canvas>
 </div>
 
-<button id="spinBtn">Choisir un élève</button>
+<button onclick="spinWheel()">Choisir un élève</button>
 
 <div id="result"></div>
 
@@ -87,9 +83,6 @@ const students = [
     "Hugo"
 ];
 
-const canvas = document.getElementById("wheel");
-const ctx = canvas.getContext("2d");
-
 const colors = [
     "#FF6384",
     "#36A2EB",
@@ -103,12 +96,15 @@ const colors = [
     "#FFC107"
 ];
 
-const center = canvas.width / 2;
-const radius = center;
+const canvas = document.getElementById("wheel");
+const ctx = canvas.getContext("2d");
+
+const center = 250;
+const radius = 250;
 
 function drawWheel(){
 
-    const slice = 2 * Math.PI / students.length;
+    const slice = (2 * Math.PI) / students.length;
 
     for(let i=0;i<students.length;i++){
 
@@ -128,9 +124,9 @@ function drawWheel(){
         ctx.translate(center,center);
         ctx.rotate(start + slice/2);
 
-        ctx.fillStyle="white";
-        ctx.font="18px Arial";
-        ctx.textAlign="right";
+        ctx.fillStyle = "white";
+        ctx.font = "18px Arial";
+        ctx.textAlign = "right";
 
         ctx.fillText(
             students[i],
@@ -144,35 +140,52 @@ function drawWheel(){
 
 drawWheel();
 
-let rotation = 0;
+let currentRotation = 0;
 
-document.getElementById("spinBtn").addEventListener("click",()=>{
+function spinWheel(){
+
+    document.getElementById("result").textContent = "";
 
     const winner =
-        Math.floor(Math.random()*students.length);
+        Math.floor(Math.random() * students.length);
 
     const sliceAngle =
         360 / students.length;
 
-    const target =
-        360 - (winner * sliceAngle) - sliceAngle/2;
+    /*
+      Centre du secteur gagnant
+      sous la flèche située en haut
+    */
+    const targetRotation =
+        360 -
+        (winner * sliceAngle + sliceAngle / 2);
 
-    const spins =
-        360 * (5 + Math.random()*3);
+    const extraSpins =
+        1800 + Math.random() * 1080;
 
-    rotation += spins + target;
+    currentRotation =
+        currentRotation +
+        extraSpins +
+        targetRotation;
+
+    canvas.style.transition =
+        "transform 5s cubic-bezier(0.17,0.67,0.15,1)";
 
     canvas.style.transform =
-        `rotate(${rotation}deg)`;
+        `rotate(${currentRotation}deg)`;
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         document.getElementById("result").innerHTML =
-            "🎉 Élève choisi : <br><b>" +
-            students[winner] +
-            "</b>";
-    },5000);
+            `🎉 Élève choisi : <br><b>${students[winner]}</b>`;
 
-});
+    }, 5000);
+}
+
+</script>
+
+</body>
+</html>
 
 </script>
 
