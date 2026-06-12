@@ -69,7 +69,38 @@ button{
 <div id="result"></div>
 
 <script>
+    
+const students = [
+    "Alice",
+    "Lucas",
+    "Emma",
+    "Nathan",
+    "Léa",
+    "Tom",
+    "Sarah",
+    "Louis",
+    "Inès",
+    "Hugo"
+];
 
+const colors = [
+    "#FF6384",
+    "#36A2EB",
+    "#FFCE56",
+    "#4BC0C0",
+    "#9966FF",
+    "#FF9F40",
+    "#8BC34A",
+    "#E91E63",
+    "#00BCD4",
+    "#FFC107"
+];
+
+const canvas = document.getElementById("wheel");
+const ctx = canvas.getContext("2d");
+
+const center = 250;
+const radius = 250;
 let currentRotation = 0;
 
 function spinWheel(){
