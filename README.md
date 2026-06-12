@@ -187,7 +187,3 @@ function spinWheel(){
 </body>
 </html>
 
-</script>
-
-</body>
-</html>
